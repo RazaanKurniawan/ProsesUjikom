@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h4 class="mt4">Kategori Buku</h4>
+        <h4 class="mt4 text-center">Kategori Buku</h4>
     </div>
     <div class="card-body">
         <div class="row">

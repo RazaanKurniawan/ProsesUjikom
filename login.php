@@ -40,7 +40,7 @@
     </div>
     <!-- Pre-loader end -->
 
-    <section class="login p-fixed d-flex text-center bg-primary common-img-bg">
+    <section class="login p-fixed d-flex text-center bg-secondary">
         <!-- Container-fluid starts -->
         <div class="container">
             <div class="row">

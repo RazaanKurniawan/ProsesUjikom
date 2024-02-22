@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h2 class="mt4 text-center">Peminjaman Buku</h2>
+        <h2 class="mt4 text-center">Ulasan Buku</h2>
     </div>
     <div class="card-body">
         <div class="row">
@@ -10,16 +10,15 @@
                     if (isset($_POST['submit'])) {
                         $id_buku = $_POST['id_buku'];
                         $id_user = $_SESSION['user']['id_user'];
-                        $tanggal_peminjaman = $_POST['tanggal_peminjaman'];
-                        $tanggal_pengembalian = $_POST['tanggal_pengembalian'];
-                        $status_peminjaman = $_POST['status_peminjaman'];
+                        $ulasan = $_POST['ulasan'];
+                        $rating = $_POST['rating'];
 
-                        $query = mysqli_query($koneksi, "INSERT INTO peminjaman (id_buku,id_user,tanggal_peminjaman,tanggal_pengembalian,status_peminjaman) VALUES('$id_buku','$id_user','$tanggal_peminjaman','$tanggal_pengembalian','$status_peminjaman')");
+                        $query = mysqli_query($koneksi, "INSERT INTO ulasan (id_user,id_buku,ulasan,rating) VALUES('$id_user','$id_buku','$ulasan','$rating')");
 
                         if($query){
-                            echo '<script>alert("Tambah data berhasil!"); location.href="?page=peminjaman";</script>';
+                            echo '<script>alert("Tambah data berhasil!"); location.href="?page=ulasan";</script>';
                         }else{
-                            echo '<script>alert("Tambah data gagal, Coba lagi"); location.href="?page=peminjaman_tambah"</script>';
+                            echo '<script>alert("Tambah data gagal, Coba lagi"); location.href="?page=ulasan_tambah"</script>';
                         }
                     }
                     ?>
@@ -39,19 +38,23 @@
                     </div>
                     </div>
                     <div class="row form-group">
-                        <div class="col-md-2">Tanggal Peminjaman</div>
-                        <div class="col-md-8"><input type="date" required name="tanggal_peminjaman" class="form-control"></div>
+                        <div class="col-md-2">Ulasan</div>
+                        <div class="col-md-8"><input type="text" required name="ulasan" class="form-control"></div>
                     </div>
                     <div class="row form-group">
-                        <div class="col-md-2">Tanggal Pengembalian</div>
-                        <div class="col-md-8"><input type="date" required name="tanggal_pengembalian" class="form-control"></div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-md-2">Status Peminjaman</div>
+                        <div class="col-md-2">Rating</div>
                         <div class="col-md-8">
-                            <select name="status_peminjaman" id="status_peminjaman" class="form-control">
-                                <option value="dipinjam">Dipinjam</option>
-                                <option value="dikembalikan">Dikembalikan</option>
+                            <select name="rating" id="rating" class="form-control">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
                             </select>
                         </div>
                     </div>

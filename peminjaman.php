@@ -1,11 +1,12 @@
 <div class="card">
     <div class="card-header">
-        <h3 class="mt-3">Peminjaman</h3>
+        <h3 class="mt-3 text-center text-center">Peminjaman Buku</h3>
     </div>
     <div class="card-body">
         <div class="row">
             <div class="col-md-12">
                 <a href="?page=peminjaman_tambah" class="btn btn-primary mb-3"><i class="fa fa-plus"></i> Tambah Data</a>
+                <a href="?page=buku_list" class="btn btn-success mb-3"><i class="fa fa-eye"></i> Lihat List Buku</a>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr>
                         <th>No</th>

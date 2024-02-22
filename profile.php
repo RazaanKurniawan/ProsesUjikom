@@ -12,8 +12,8 @@
                     $password = MD5($_POST['password']);
                     $email = $_POST['email'];
                     $alamat = $_POST['alamat'];
-                    $no_telepon = $_POST['no_telepon'];
-                    $query = mysqli_query($koneksi, "UPDATE user SET nama='$nama', username='$username', password='$password', email='$email', alamat='$alamat', no_telepon='$no_telepon' WHERE id_user=$id");
+                    $no_telp = $_POST['no_telp'];
+                    $query = mysqli_query($koneksi, "UPDATE user SET username='$username', nama='$nama', email='$email', password='$password', alamat='$alamat', no_telp='$no_telp' WHERE id_user=$id");
 
                     if ($query) {
                         echo '<script>alert("Edit data berhasil!"); location.href="?page=home";</script>';

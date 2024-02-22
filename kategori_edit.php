@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h4 class="mt4">Edit Kategori Buku</h4>
+        <h4 class="mt4 text-center">Edit Kategori Buku</h4>
     </div>
     <div class="card-body">
         <div class="row">
@@ -13,9 +13,9 @@
                         $query = mysqli_query($koneksi, "UPDATE kategori SET kategori='$kategori' WHERE id_kategori=$id");
 
                         if ($query) {
-                            echo '<script>alert("Tambah data berhasil!"); location.href="?page=kategori";</script>';
+                            echo '<script>alert("Edit data berhasil!"); location.href="?page=kategori";</script>';
                         } else {
-                            echo '<script>alert("Tambah data gagal, Coba lagi"); location.href="?page=kategori_tambah"</script>';
+                            echo '<script>alert("Edit data gagal, Coba lagi"); location.href="?page=kategori_tambah"</script>';
                         }
                     }
                     $query = mysqli_query($koneksi, "SELECT * FROM kategori WHERE id_kategori=$id");

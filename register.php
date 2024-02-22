@@ -38,7 +38,7 @@
         </div>
     </div>
     <!-- Pre-loader end -->
-    <section class="" style="background-color: aqua;">
+    <div class="bg-secondary">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
             <div class="row">
@@ -75,38 +75,38 @@
                                 </div>
                                 <hr/>
                                 <div class="form-group">
-                                    <label><strong>Username</strong></label>
-                                    <input type="text" name="username" id="username" class="form-control" placeholder="Username">
+                                    <label><strong>Nama Lengkap</strong></label>
+                                    <input type="text" required name="nama" id="nama" class="form-control" placeholder="Nama Lengkap">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label><strong>Nama Lengkap</strong></label>
-                                    <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Lengkap">
+                                    <label><strong>Username</strong></label>
+                                    <input type="text" required name="username" id="username" class="form-control" placeholder="Username">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="form-group">
                                     <label><strong>Email</strong></label>
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Masukkan Email">
+                                    <input type="email" required name="email" id="email" class="form-control" placeholder="Masukkan Email">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="form-group">
                                     <label><strong>Nomor Telepon</strong></label>
-                                    <input type="text" name="no_telp" id="no_telp" class="form-control" placeholder="Nomor Telepon">
+                                    <input type="text" required name="no_telp" id="no_telp" class="form-control" placeholder="Nomor Telepon">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="form-group">
                                     <label><strong>Password</strong></label>
-                                    <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                                    <input type="password" required name="password" id="password" class="form-control" placeholder="Password">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="form-group">
                                     <label><strong>Alamat</strong></label>
-                                    <textarea name="alamat" id="alamat" cols="30" rows="5" class="form-control" style="resize: none;" placeholder="Alamat"></textarea>
+                                    <textarea name="alamat" required id="alamat" cols="30" rows="5" class="form-control" style="resize: none;" placeholder="Alamat"></textarea>
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="form-group">
                                     <label><strong>Roles</strong></label>
-                                    <select name="level" id="level" class="form-control">
+                                    <select name="level" required id="level" class="form-control">
                                         <option value="admin">Admin</option>
                                         <option value="peminjam">Peminjam</option>
                                     </select>
@@ -115,7 +115,7 @@
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
                                         <button type="submit" name="register" id="register" value="register" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Register</button>
-                                        <a href="login.php" class="btn btn-link">Sudah mempunyai akun? Login disini</a>
+                                        <a href="login.php" class="btn btn-link btn-md btn-block waves-effect">Sudah mempunyai akun? Login disini</a>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -132,7 +132,7 @@
             <!-- end of row -->
         </div>
         <!-- end of container-fluid -->
-    </section>
+        </div>
     <!-- Warning Section Starts -->
     <!-- Older IE warning message -->
     <!--[if lt IE 9]>
