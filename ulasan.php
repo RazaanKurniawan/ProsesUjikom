@@ -6,7 +6,6 @@
         <div class="row">
             <div class="col-md-12">
                 <a href="?page=ulasan_tambah" class="btn btn-primary mb-3"><i class="fa fa-plus"></i> Tambah Data</a>
-<<<<<<< HEAD
                 <div class="col-md-6 mx-auto">
                 <form action="" method="POST">
                 <div class="input-group mb-3">
@@ -25,8 +24,6 @@
                 </div>
                 </form>
                 </div>
-=======
->>>>>>> f8503d2db7f2bea3bb32e6b99dde243438f9fa80
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr>
                         <th>No</th>
@@ -38,7 +35,6 @@
                     </tr>
                     <?php
                     $i = 1;
-<<<<<<< HEAD
 
                     if(isset($_POST['bcari'])) {
                         $keyword = $_POST['tcari'];
@@ -49,9 +45,6 @@
                     }
 
                     $query = mysqli_query($koneksi, $q);
-=======
-                    $query = mysqli_query($koneksi, "SELECT * FROM ulasan LEFT JOIN user on user.id_user = ulasan.id_user LEFT JOIN buku on buku.id_buku = ulasan.id_buku");
->>>>>>> f8503d2db7f2bea3bb32e6b99dde243438f9fa80
                     while ($data = mysqli_fetch_array($query)) {
                     ?>
                         <tr>
