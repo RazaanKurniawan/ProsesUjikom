@@ -109,11 +109,14 @@ if (!isset($_SESSION['user'])) {
                 Akses Peminjam
             </div>
             <li class="nav-item">
+<<<<<<< HEAD
                 <a class="nav-link" href="?page=Buku_List">
                     <i class="fas fa fa-bars"></i>
                     <span>List Buku</span></a>
             </li>
             <li class="nav-item">
+=======
+>>>>>>> f8503d2db7f2bea3bb32e6b99dde243438f9fa80
                     <a class="nav-link" href="?page=Peminjaman">
                         <i class="fas fa-fw fa-book-open"></i>
                         <span>Peminjaman</span></a>
@@ -122,7 +125,11 @@ if (!isset($_SESSION['user'])) {
                 <a class="nav-link" href="?page=Ulasan">
                     <i class="fas fa-fw fa-comment"></i>
                     <span>Ulasan</span></a>
+<<<<<<< HEAD
             </li>	
+=======
+            </li>
+>>>>>>> f8503d2db7f2bea3bb32e6b99dde243438f9fa80
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

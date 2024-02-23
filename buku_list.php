@@ -5,6 +5,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-md-12">
+<<<<<<< HEAD
                 <div class="col-md-6 mx-auto">
                 <form action="" method="POST">
                 <div class="input-group mb-3">
@@ -24,10 +25,14 @@
                 </form>
                 </div>
                 <table class="table table-bordered" id="dataTable" cellspacing="0" cellpadding="5" width="100%">
+=======
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+>>>>>>> f8503d2db7f2bea3bb32e6b99dde243438f9fa80
                     <tr>
                         <th>No</th>
                         <th>Kategori</th>
                         <th>Judul Buku</th>
+<<<<<<< HEAD
                         <th>Aksi</th>
                     </tr>
                     <?php
@@ -42,13 +47,30 @@
                     }
 
                     $query = mysqli_query($koneksi, $q);
+=======
+                        <th>Penulis</th>
+                        <th>Penerbit</th>
+                        <th>Tahun Terbit</th>
+                        <th>Deskripsi</th>
+                    </tr>
+                    <?php
+                    $i = 1;
+                    $query = mysqli_query($koneksi, "SELECT * FROM buku LEFT JOIN kategori on kategori.id_kategori = buku.id_kategori");
+>>>>>>> f8503d2db7f2bea3bb32e6b99dde243438f9fa80
                     while ($data = mysqli_fetch_array($query)) {
                     ?>
                         <tr>
                             <td><?php echo $i++ ?></td>
                             <td><?php echo $data['kategori']; ?></td>
                             <td><?php echo $data['judul']; ?></td>
+<<<<<<< HEAD
                             <td><a href="?page=buku_show&&id=<?php echo $data['id_buku']; ?>" class="btn btn-primary">Show More</a></td>
+=======
+                            <td><?php echo $data['penulis']; ?></td>
+                            <td><?php echo $data['penerbit']; ?></td>
+                            <td><?php echo $data['tahun_terbit']; ?></td>
+                            <td><?php echo $data['deskripsi']; ?></td>
+>>>>>>> f8503d2db7f2bea3bb32e6b99dde243438f9fa80
                         </tr>
                     <?php
                     }

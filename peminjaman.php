@@ -6,6 +6,7 @@
         <div class="row">
             <div class="col-md-12">
                 <a href="?page=peminjaman_tambah" class="btn btn-primary mb-3"><i class="fa fa-plus"></i> Tambah Data</a>
+<<<<<<< HEAD
                 <div class="col-md-6 mx-auto">
                 <form action="" method="POST">
                 <div class="input-group mb-3">
@@ -24,6 +25,9 @@
                 </div>
                 </form>
                 </div>
+=======
+                <a href="?page=buku_list" class="btn btn-success mb-3"><i class="fa fa-eye"></i> Lihat List Buku</a>
+>>>>>>> f8503d2db7f2bea3bb32e6b99dde243438f9fa80
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr>
                         <th>No</th>
@@ -36,6 +40,7 @@
                     </tr>
                     <?php
                     $i = 1;
+<<<<<<< HEAD
 
                     if(isset($_POST['bcari'])) {
                         $keyword = $_POST['tcari'];
@@ -46,6 +51,9 @@
                     }
 
                     $query = mysqli_query($koneksi, $q);
+=======
+                    $query = mysqli_query($koneksi, "SELECT * FROM peminjaman LEFT JOIN user on user.id_user = peminjaman.id_user LEFT JOIN buku on buku.id_buku = peminjaman.id_buku WHERE peminjaman.id_user=" . $_SESSION['user']['id_user']);
+>>>>>>> f8503d2db7f2bea3bb32e6b99dde243438f9fa80
                     while ($data = mysqli_fetch_array($query)) {
                     ?>
                         <tr>
