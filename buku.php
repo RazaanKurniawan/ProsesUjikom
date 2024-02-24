@@ -43,7 +43,7 @@
                         $q = "SELECT * FROM buku LEFT JOIN kategori on kategori.id_kategori = buku.id_kategori ORDER BY id_buku desc";
                     }
 
-                    $query = mysqli_query($koneksi, "SELECT * FROM buku LEFT JOIN kategori on kategori.id_kategori = buku.id_kategori ORDER BY id_buku desc");
+                    $query = mysqli_query($koneksi, $q);
                     while ($data = mysqli_fetch_array($query)) {
                     ?>
                         <tr>

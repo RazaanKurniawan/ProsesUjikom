@@ -13,7 +13,7 @@
         </div>
         <div class="col-md-8 mx-auto d-flex justify-content-center">
             <!-- <div class="w-100" style="background-color:grey;height:500px;border-radius:20px;"></div>  -->
-            <img width="730px" height="800x" src="img/harrypother.jpg" style="border-radius:20px; object-fit:cover" alt="">
+            <img width="730px" height="800x" src="img/cover2.jpg" style="border-radius:20px; object-fit:cover" alt="">
         </div>
         <div class="col-md-8 mx-auto mt-4 text-center">
             <div><?php echo $data['deskripsi'] ?></div>

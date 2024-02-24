@@ -107,7 +107,6 @@
                                 <div class="form-group">
                                     <label><strong>Roles</strong></label>
                                     <select name="level" required id="level" class="form-control">
-                                        <option value="admin">Admin</option>
                                         <option value="peminjam">Peminjam</option>
                                     </select>
                                     <span class="md-line"></span>

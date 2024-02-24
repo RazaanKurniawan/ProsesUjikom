@@ -8,13 +8,14 @@
                 <form action="" method="POST">
                     <?php
                     if (isset($_POST['submit'])) {
+
                         $id_kategori = $_POST['id_kategori'];
                         $judul = $_POST['judul'];
                         $penulis = $_POST['penulis'];
                         $penerbit = $_POST['penerbit'];
                         $tahun_terbit = $_POST['tahun_terbit'];
                         $deskripsi = $_POST['deskripsi'];
-
+                        
                         $query = mysqli_query($koneksi, "INSERT INTO buku (id_kategori,judul,penulis,penerbit,tahun_terbit,deskripsi) values('$id_kategori','$judul','$penulis','$penerbit','$tahun_terbit','$deskripsi')");
 
                         if($query){
