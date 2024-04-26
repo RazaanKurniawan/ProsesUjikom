@@ -49,7 +49,7 @@
                     ?>
                         <tr>
                             <td><?php echo $i++ ?></td>
-                            <td><?php echo $data['nama']; ?></td>
+                            <td><?php echo $data['username']; ?></td>
                             <td><?php echo $data['judul']; ?></td>
                             <td><?php echo $data['ulasan']; ?></td>
                             <td><?php echo $data['rating']; ?></td>

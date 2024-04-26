@@ -12,11 +12,11 @@
                     $password = MD5($_POST['password']);
                     $email = $_POST['email'];
                     $alamat = $_POST['alamat'];
-                    $no_telp = $_POST['no_telp'];
-                    $query = mysqli_query($koneksi, "UPDATE user SET username='$username', nama='$nama', email='$email', password='$password', alamat='$alamat', no_telp='$no_telp' WHERE id_user=$id");
+                    $no_telepon = $_POST['no_telepon'];
+                    $query = mysqli_query($koneksi, "UPDATE user SET nama='$nama', username='$username', password='$password', email='$email', alamat='$alamat', no_telepon='$no_telepon' WHERE id_user=$id");
 
                     if ($query) {
-                        echo '<script>alert("Edit data berhasil!"); location.href="?page=profile";</script>';
+                        echo '<script>alert("Edit data berhasil!"); location.href="?page=home";</script>';
                     } else {
                         echo '<script>alert("Edit data gagal, Coba lagi"); location.href="?page=profile"</script>';
                     }
@@ -25,7 +25,7 @@
                 $data = mysqli_fetch_array($query);
                 ?>
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                    <img class="rounded-circle img-profile rounded-circle mt-5" width="150px" height="150px" src="assets/img/undraw_profile_2.svg">
+                    <img class="rounded-circle img-profile rounded-circle mt-5" width="150px" height="150px" src="https://picsvg.com/svg/5hhXxi.jpg">
                     <span class="font-weight-bold"><?php echo $data['nama']; ?></span>
                     <span class="font-weight-bold"> | <?php echo $data['level'] ?> | </span>
                     <span class="text-black-50"><?php echo $data['email']; ?></span>
@@ -46,16 +46,16 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-12"><label class="labels">Nomor Telepon</label>
-                        <input type="text" class="form-control" placeholder="Nomor Telepon" value="<?php echo $data['no_telp']; ?>" id="no_telp" name="no_telp">
+                        <input type="text" class="form-control" placeholder="Nomor Telepon" value="<?php echo $data['no_telepon']; ?>" id="no_telepon" name="no_telepon">
                     </div>
                     <div class="col-md-12"><label class="labels">Email</label>
-                        <input type="email" class="form-control" placeholder="Masukkan alamat email" value="<?php echo $data['email']; ?>" id="email" name="email">
+                        <input type="text" class="form-control" placeholder="Masukkan alamat email" value="<?php echo $data['email']; ?>" id="email" name="email">
                     </div>
                     <div class="col-md-12"><label class="labels">Password</label>
                         <input type="password" class="form-control" placeholder="Masukkan password" value="<?php echo $data['password']; ?>" id="password" name="password">
                     </div>
                     <div class="col-md-12"><label class="labels">Alamat</label>
-                        <textarea type="text" class="form-control" style="height: 180px; resize:none;" placeholder="Alamat" value="" name="alamat" id="alamat"><?php echo $data['alamat']; ?></textarea>
+                        <textarea type="text" class="form-control" style="height: 180px;" placeholder="Alamat" value="" name="alamat" id="alamat"><?php echo $data['alamat']; ?></textarea>
                     </div>
                 </div>
             </div>

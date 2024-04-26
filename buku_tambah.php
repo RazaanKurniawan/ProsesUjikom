@@ -5,7 +5,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-md-12">
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <?php
                     if (isset($_POST['submit'])) {
 
@@ -15,8 +15,19 @@
                         $penerbit = $_POST['penerbit'];
                         $tahun_terbit = $_POST['tahun_terbit'];
                         $deskripsi = $_POST['deskripsi'];
+                    }
+
+                        if(isset($_FILES['coverbuku'])) {
+                            $file_tmp = $_FILES['coverbuku']['tmp_name'];
+                            $file_name = $_FILES['coverbuku']['name'];
                         
-                        $query = mysqli_query($koneksi, "INSERT INTO buku (id_kategori,judul,penulis,penerbit,tahun_terbit,deskripsi) values('$id_kategori','$judul','$penulis','$penerbit','$tahun_terbit','$deskripsi')");
+                           
+                            $target_dir = "img/";
+                            $target_file = $target_dir . basename($file_name);
+                            move_uploaded_file($file_tmp, $target_file);
+                          
+                        
+                        $query = mysqli_query($koneksi, "INSERT INTO buku (id_kategori,judul,penulis,penerbit,tahun_terbit,deskripsi,coverimg) values('$id_kategori','$judul','$penulis','$penerbit','$tahun_terbit','$deskripsi','$file_name')");
 
                         if($query){
                             echo '<script>alert("Tambah data berhasil!"); location.href="?page=buku";</script>';
@@ -55,6 +66,10 @@
                     <div class="row form-group">
                         <div class="col-md-2">Tahun Terbit</div>
                         <div class="col-md-8"><input type="text" required name="tahun_terbit" class="form-control"></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-2">Cover Buku</div>
+                        <div class="col-md-8"><input type="file" required name="coverbuku" class="form-control"></div>
                     </div>
                     <div class="row form-group">
                         <div class="col-md-2">Deskripsi</div>

@@ -131,10 +131,6 @@ if (!isset($_SESSION['user'])) {
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
-            <div class="text-white fixed-bottom mb-3  container-fluid">
-                <div class=""><strong>Logged in as:</strong></div>
-                <div class=""><?php echo $data['nama'] ?></div>
-            </div>
         </ul>
 
         <!-- End of Sidebar -->

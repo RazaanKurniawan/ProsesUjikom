@@ -5,7 +5,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-md-12">
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <?php
                     $id = $_GET['id'];
                     if (isset($_POST['submit'])) {
@@ -15,7 +15,20 @@
                         $penerbit = $_POST['penerbit'];
                         $tahun_terbit = $_POST['tahun_terbit'];
                         $deskripsi = $_POST['deskripsi'];
-                        $query = mysqli_query($koneksi, "UPDATE buku SET id_kategori='$id_kategori', judul='$judul', penulis='$penulis', penerbit='$penerbit', tahun_terbit='$tahun_terbit', deskripsi='$deskripsi' WHERE id_buku=$id");
+
+                        $queryShow = "SELECT * FROM buku where id_buku=$id;";
+                        $sqlShow = mysqli_query($koneksi, $queryShow);
+                        $result = mysqli_fetch_assoc($sqlShow);
+
+                        if($_FILES['coverbuku']['name'] == ""){
+                            $coverimg = $result['coverimg'];
+                        }else{
+                            $coverimg = $_FILES['coverbuku']['name'];
+                            unlink("img/". $result['coverimg']);
+                            move_uploaded_file($_FILES['coverbuku']['tmp_name'],'img/'. $_FILES['coverbuku']['name']);
+                        }
+
+                        $query = mysqli_query($koneksi, "UPDATE buku SET id_kategori='$id_kategori', judul='$judul', penulis='$penulis', penerbit='$penerbit', tahun_terbit='$tahun_terbit', deskripsi='$deskripsi', coverimg='$coverimg' WHERE id_buku=$id");
 
                         if ($query) {
                             echo '<script>alert("Edit data berhasil!"); location.href="?page=buku";</script>';
@@ -56,6 +69,10 @@
                     <div class="row form-group">
                         <div class="col-md-2">Tahun Terbit</div>
                         <div class="col-md-8"><input type="text" value="<?php echo $data['tahun_terbit'] ?>" required name="tahun_terbit" class="form-control"></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-2">Cover Buku</div>
+                        <div class="col-md-8"><input type="file" value="<?php echo $data['coverimg'] ?>" name="coverbuku" class="form-control"></div>
                     </div>
                     <div class="row form-group">
                         <div class="col-md-2">Deskripsi</div>
